@@ -1,0 +1,98 @@
+doctype html
+html(lang='ru-RU')
+  include common/_head
+  body
+    <!--[if lt IE 7]>
+    <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
+    <![endif]-->
+    .preloader_container
+      .preloader
+        .outer-circle
+        .middle-circle
+        .inner-circle
+        .preloader_text 0
+    .wrapper-welcome
+      .parallax
+        .parallax__layer
+          img(src='assets/img/parallax/layer_009.jpg').parallax__layer-img
+        .parallax__layer
+          img(src='assets/img/parallax/layer_008.png').parallax__layer-img
+        .parallax__layer
+          img(src='assets/img/parallax/layer_007.png').parallax__layer-img
+        .parallax__layer
+          img(src='assets/img/parallax/layer_006.png').parallax__layer-img
+        .parallax__layer
+          img(src='assets/img/parallax/layer_005.png').parallax__layer-img
+        .parallax__layer
+          img(src='assets/img/parallax/layer_004.png').parallax__layer-img
+        .parallax__layer
+          img(src='assets/img/parallax/layer_003.png').parallax__layer-img
+        .parallax__layer
+          img(src='assets/img/parallax/layer_002.png').parallax__layer-img
+        .parallax__layer
+          img(src='assets/img/parallax/layer_001.png').parallax__layer-img
+      header.header
+        .authorize
+          a(class='authorize_div', href='#')
+            span.authorize_div-text Авторизоваться
+      section
+        .flip
+          .flip_front
+            .flip-avatar
+              img(src='/assets/img/ava.jpg').flip-ava-img
+            h2.flip-name Олег Королько
+            p.flip-text Личный сайт веб разработчика
+            nav
+              ul.menu
+                li.menu-elem.menu-elem-1
+                  a(class='menu-elem-link', href='works')
+                    span.menu-elem-text Мои работы
+                li.menu-elem.menu-elem-2
+                  a(class='menu-elem-link', href='aboutme')
+                    span.menu-elem-text Обо мне
+                li.menu-elem.menu-elem-3
+                  a(class='menu-elem-link', href='blog')
+                    span.menu-elem-text Блог
+            .icons
+              -var vk = "./assets/img/icons/vk.svg"
+              -var lin = "/assets/img/icons/in.svg"
+              -var github = "/assets/img/icons/github.svg"
+
+              mixin use(name, svg)
+                svg(class="#{name}" role="img")
+                  use(xlink:href="#{svg}##{name}")
+              +use('vk', vk)
+              +use('in', lin)
+              +use('github', github)
+          .flip_back
+            h2.flip_back__header Авторизуйтесь
+            form.auth_form
+              .auth_div
+                span.auth_span
+                  i(class='fa fa-user').auth_span_icon
+                input(type="text" id="name" name="name" placeholder='Логин').auth_input
+              .auth_div
+                span.auth_span
+                  i(class='fa fa-key').auth_span_icon
+                input(type="password" id="password" name="password" placeholder='Пароль').auth_input
+              .isHuman.checkbox
+                label.fancy-checkbox
+                  input(type='checkbox')#isHuman
+                  span.checkbox_span Я человек
+              .auth_radio_container
+                span.notRobot Вы точно не робот?
+                .auth_radio_buttons
+                  input(type='radio', name='option', id='radio1').auth_radio_buttons_left
+                  label(for='radio1').auth_radio_buttons_left Да
+                  input(type='radio', name='option', id='radio2').auth_radio_buttons_right
+                  label(for='radio2').auth_radio_buttons_right Не уверен
+            nav
+              ul.menu
+                li.menu-elem.menu-elem-auth-1
+                  a(class='menu-elem-link', href='/')
+                    span.menu-elem-text На главную
+                li.menu-elem.menu-elem-auth-2#login
+                  a(class='menu-elem-link', href='authorize')
+                    span.menu-elem-text Войти
+      footer.footer-welcome
+        p.footer-welcome-text © Олег Королько | создано с любовью в LoftSchool | 2016

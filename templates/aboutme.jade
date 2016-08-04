@@ -1,0 +1,76 @@
+extends main
+block content
+    .aboutme
+      section.aboutme-section
+        h2.aboutme-header ОБО МНЕ
+        img(src='/assets/img/ava_big.jpg').aboutme-image
+        h3.aboutme-header-who КТО Я
+        .aboutme-header_who_text
+          p(class='aboutme-text').
+           Я веб разработчик из Санкт-Петербурга. Мне 29 лет.
+           Я занимаюсь разработкой современных сайтов и приложений. Мне нравится
+           делать интересные и современные проекты.
+          p(class='aboutme-text').
+            Этот сайт я сделал в рамках обучение в Школе онлайн образования LoftSchool.
+            Чуть позже я освежу в нем свой контент. А пока посмотрите как тут все классно
+            и красиво.
+      section.graphs-section
+        h2.graphs-header Чем я могу быть вам полезен
+        p(class='graphs-text').
+          Больше всего меня привлекает Frontend разработка, но я также знаком и могу
+          решать не сложные задачи на Backend. Но давайте по порядку.
+        .skills-section
+          .skills__name Frontend
+          .skills__elems
+            each val, index in {html:'HTML5', css:'CSS3', js:'JavaScript & jQuery'}
+              .skills__elems_one
+                svg.g-circles(width='110', height='110')
+                  circle(r='44', cx='55', cy='55', stroke='#ccc', fill='none')
+                  circle.sector(transform='rotate(-90 135 135)' r='44', cx='215', cy='55', stroke='crimson', data-diagram= index)
+                .skills__elems_one_text= val
+          .skills__name Backend
+          .skills__elems
+            each val, index in {php:'PHP', nodejs: 'Node.js & npm', mongodb: 'Mongo.db'}
+              .skills__elems_one
+                svg.g-circles(width='110', height='110')
+                  circle(r='44', cx='55', cy='55', stroke='#ccc', fill='none')
+                  circle.sector(transform='rotate(-90 135 135)' r='44', cx='215', cy='55', stroke='crimson', data-diagram= index )
+                .skills__elems_one_text= val
+          .skills__name WorkFlow
+          .skills__elems
+            each val, index in {git:'Git', gulp: 'Gulp', bower: 'Bower'}
+              .skills__elems_one
+                svg.g-circles(width='110', height='110')
+                  circle(r='44', cx='55', cy='55', stroke='#ccc', fill='none')
+                  circle.sector(transform='rotate(-90 135 135)' r='44', cx='215', cy='55', stroke='crimson', data-diagram= index)
+                .skills__elems_one_text= val
+    .map__container
+      div#map
+      .contacts
+        h2.contacts__header КОНТАКТЫ
+        .contacts__elems
+          ul
+            li
+              a(class='contacts__elems_link', href='#')
+                .contacts__elems_item
+                  svg.contacts__elem_icon
+                    use(xlink:href='assets/img/icons/skype.svg#skype')
+                  span.contacts__elem_span olegk
+            li
+              a(class='contacts__elems_link', href='#')
+                .contacts__elems_item
+                  svg.contacts__elem_icon
+                    use(xlink:href='assets/img/icons/envelope.svg#envelope')
+                  span.contacts__elem_span olegk101@gmail.com
+            li
+              a(class='contacts__elems_link', href='#')
+                .contacts__elems_item
+                  svg.contacts__elem_icon
+                    use(xlink:href='assets/img/icons/phone.svg#phone')
+                  span.contacts__elem_span +7 921 744 1764
+            li
+              a(class='contacts__elems_link', href='#')
+                .contacts__elems_item
+                  svg.contacts__elem_icon
+                    use(xlink:href='assets/img/icons/map_marker.svg#map_marker')
+                  span.contacts__elem_span Россия, г.Санкт-Петербург

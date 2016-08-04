@@ -1,0 +1,69 @@
+extends main
+block content
+  section.works
+    .works__header_block
+      h2.works__header.works__header-additional МОИ РАБОТЫ
+    .works__container
+      .works__container_top
+        .works__right_top
+          each item, index in works
+            img(src= item.src).works__right_top_img
+        .works__left
+          .works__left_header
+          each item, index in works
+            h3.works__left_header_inner= item.title
+          .works__left_done-with
+            each item, index in works
+              .works__left_done-with_inner= item.body
+            button.works__left_checkout-site Посмотреть сайт
+      .works__right_bottom
+        .works__right_bottom_left
+          .slider-arrow-down
+          each item, index in works
+            img(src= item.src).works__right_bottom_left_img
+        .works__right_bottom_right
+          .slider-arrow-up
+          each item, index in works
+            img(src= item.src).works__right_bottom_right_img
+  section.testimonials
+    .testimonials__header-block
+      h2.works__header ЧТО ОБО МНЕ ГОВОРЯТ
+      .testimonials_item_container
+        .testimonials_item
+          p(class='testimonials_item_text').
+            Этот парень проходил обучение веб-разработке не где-то,
+            а в LoftSchool! 2 месяца только самых тяжелых испытаний
+            и бессонных ночей!
+          .testimonials_bottom
+          img(src='assets/img/dima.png').testimonials_img
+          div.testimonials_name
+            div.testimonials_name_item Ковальчук Дмитрий
+            div.testimonials_name_item основатель LoftSchool
+        .testimonials_item
+          p(class='testimonials_item_text').
+            Этот код выдержет любые испытания.
+            Только пожалуйста, не загружается сайт на слишком
+            старых браузерах!
+          .testimonials_bottom
+            img(src='assets/img/zar.png').testimonials_img
+            div.testimonials_name
+              div.testimonials_name_item Зар Захаров
+              div.testimonials_name_item главный преподаватель курса
+      .testimonials__blur
+        .form-contact__wrapper
+          .form-contact__bg
+            form.form-contact
+              .section-title
+                .section-title__inner Связаться со мной
+              input.form__input(type='text', placeholder='Имя')
+              input.form__input(type='email', placeholder='Email')
+              textarea.form__input(name='', cols='15', rows='2', placeholder='Ваше сообщение')
+          nav
+            ul.menu
+              li.menu-elem.menu-elem-auth-1
+                a(class='menu-elem-link', href='index.html')
+                  button.menu-elem-text Отправить
+
+              li.menu-elem.menu-elem-auth-2
+                a(class='menu-elem-link', href='authorize.html')
+                  span.menu-elem-text Очистить

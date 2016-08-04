@@ -1,0 +1,49 @@
+doctype html
+html(lang='ru-RU')
+  include common/_head
+  body
+    <!--[if lt IE 7]>
+    <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
+    <![endif]-->
+    .preloader_container
+      .preloader
+        .outer-circle
+        .middle-circle
+        .inner-circle
+        .preloader_text 0
+    .wrapper
+      .first-screen
+        .parallax-scroll
+          .parallax-scroll__layer
+            img(src='assets/img/parallax/layer_009.jpg').parallax-scroll__layer-img
+          .parallax-scroll__layer
+            img(src='assets/img/parallax/layer_008.png').parallax-scroll__layer-img
+          .parallax-scroll__layer
+            img(src='assets/img/parallax/layer_007.png').parallax-scroll__layer-img
+          .parallax-scroll__layer
+            img(src='assets/img/parallax/layer_006.png').parallax-scroll__layer-img
+          .parallax-scroll__layer
+            img(src='assets/img/parallax/layer_005.png').parallax-scroll__layer-img
+          .parallax-scroll__layer
+            img(src='assets/img/parallax/layer_004.png').parallax-scroll__layer-img
+          .parallax-scroll__layer
+            img(src='assets/img/parallax/layer_003.png').parallax-scroll__layer-img
+          .parallax-scroll__layer
+            img(src='assets/img/parallax/layer_002.png').parallax-scroll__layer-img
+          .parallax-scroll__layer
+            img(src='assets/img/parallax/layer_001.png').parallax-scroll__layer-img
+        include common/_header
+        section.main
+          .avatar
+            img(src='/assets/img/ava.jpg').ava-image
+          h1.name Олег Королько
+          p.text Личный сайт веб разработчика
+        .arrow-down
+          a(class='arrow-down-link', href='#')
+            svg.arrow-down-icon
+              use(xlink:href='assets/img/icons/arrow_down.svg#arrow_down')
+        svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 1000 85', preserveaspectratio='none').triangle
+          polygon(points='0,0   0,86   500.8,86   500.8,75.5')#triangle_left
+          polygon(points='1000,0   1000,86   500,86   500,75.5')#triangle_right
+      block content
+    include common/_footer

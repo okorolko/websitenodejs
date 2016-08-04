@@ -1,0 +1,16 @@
+extends main
+block content
+  section.blog-container
+    aside.blog-menu
+      ul.blog-menu-list
+        each item, index in posts
+          li.blog-menu-elem(data-id= index, id='item#{index}')
+            .blog-menu-elem-container #{item.title}
+    .blog-content
+        each item, index in posts
+            .blog-article
+                h2.blog-article-header #{item.title}
+                span.blog-article-date #{item.date}
+                .blog-article-content.
+                    #{item.content}
+

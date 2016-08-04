@@ -1,0 +1,98 @@
+doctype html
+html(lang='ru-RU')
+  include common/_head
+  body
+    <!--[if lt IE 7]>
+    <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
+    <![endif]-->
+    .admin-wrapper
+      .modal-container
+        .modal-block
+          .modal-block-text Данные добавлены
+          .modal-block-button
+            button#modalOk.admin-button Закрыть
+      header.admin_header
+        .admin_header_text Панель администрирования
+        .admin_header_return
+          a(href="/") Вернуться на сайт
+      section
+        .tabs__control
+          ul.tabs__control-list
+            li(data-class="0").tabs__control-item
+              a.tabs__control-link(href="#")
+                .link_container TAB1
+            li(data-class="1").tabs__control-item
+              a.tabs__control-link(href="#") TAB2
+            li(data-class="2").tabs__control-item
+              a.tabs__control-link(href="#") TAB3
+        .tabs__list
+          ul.tabs__list-list
+            li.tabs__list-item.activeTab
+              .tabs__list-container
+                h1 Страница "Обо мне"
+                .tabs__list-top
+                  .tabs__list_block.tabs__list_block-left
+                    h2.tabs__list-header Frontend
+                    .tabs__list_block-elem
+                      span.tabs__list-text html
+                      span.tabs__list-percent %
+                      input(type='number' max='3' name="html").tabs__list-input
+                    .tabs__list_block-elem
+                      span.tabs__list-text CSS
+                      span.tabs__list-percent %
+                      input(type='number' max='3' name="css").tabs__list-input
+                    .tabs__list_block-elem
+                      span.tabs__list-text Javascript
+                      span.tabs__list-percent %
+                      input(type='number' max='3' name="javascript").tabs__list-input
+                  .tabs__list_block.tabs__list_block-right
+                    h2.tabs__list-header Workflow
+                    .tabs__list_block-elem
+                      span.tabs__list-text Git
+                      span.tabs__list-percent %
+                      input(type='number' max='3' name="git").tabs__list-input
+                    .tabs__list_block-elem
+                      span.tabs__list-text Gulp
+                      span.tabs__list-percent %
+                      input(type='number' max='3' name="gulp").tabs__list-input
+                    .tabs__list_block-elem
+                      span.tabs__list-text Bower
+                      span.tabs__list-percent %
+                      input(type='number' max='3' name="bower").tabs__list-input
+                .tabs__list_block
+                  h2.tabs__list-header Backend
+                  .tabs__list_block-elem
+                    span.tabs__list-text PHP
+                    span.tabs__list-percent %
+                    input(type='number' max='3' name="php").tabs__list-input
+                  .tabs__list_block-elem
+                    span.tabs__list-text Node.js
+                    span.tabs__list-percent %
+                    input(type='number' max='3' name="nodejs").tabs__list-input
+                  .tabs__list_block-elem
+                    span.tabs__list-text Mongo.db
+                    span.tabs__list-percent %
+                    input(type='number' max='3' name="mongodb").tabs__list-input
+                  button#saveDiagram.admin-button Сохранить
+            li.tabs__list-item
+              .tabs__list-container
+                h1 Страница "Блог"
+                .blog__container
+                  h2 Добавить запись
+                  form#blogPost
+                    input(type="text" placeholder="Название" name="title").blog__name
+                    input(type="text" placeholder="Дата" name="date").blog__name
+                    textarea(rows="6" cols="50" placeholder="Содержание" name="content").blog__article
+                    button(type="submit")#addBlogPost.admin-button Добавить
+            li.tabs__list-item
+              .tabs__list-container
+                h1 Страница "Мои работы"
+                .works__container
+                  h2 Добавить работу
+                  form#uploadForm
+                    input(type="text" placeholder="Название проекта" name="title").works__text-field
+                    input(type="text" placeholder="Технологии" name="body").works__text-field
+                    input(type='file', name='photo')#photo.inputfile.inputfile-4
+                    label(for='photo')
+                      span Загрузить картинку
+                    button#addWork.admin-button Добавить
