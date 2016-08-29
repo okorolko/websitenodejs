@@ -30,14 +30,14 @@ exports.post = function(req, res, next) {
 
     var data = {
       'title': req.body.title, 
-      'body': req.body.body,
+      'tech': req.body.tech,
       'filename': req.file.filename,
       'src': filePath
     };
-   // console.log(req.body.title);
-    //console.log(req.body.body);
-    //console.log(req.file.filename);
-    //console.log(filePath);
+   console.log(req.body.title);
+    console.log(req.body.tech);
+    console.log(req.file.filename);
+    console.log(filePath);
 
     database.saveData(data, res, next);
     res.end("File is uploaded");

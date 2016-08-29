@@ -9,6 +9,7 @@ function saveData (data, res, next) {
     html: data.html,
     css: data.css,
     js: data.js,
+    sass: data.sass,
     git: data.git,
     gulp: data.gulp,
     bower: data.bower,
@@ -18,19 +19,14 @@ function saveData (data, res, next) {
   });
 
   try {
-    Diagram.findByIdAndUpdate('579d169d0467df0a3432e7ef', { $set: data }, function(err) {
+    Diagram.findByIdAndUpdate('579d169d0467df0a3432e7ef', {$set: data}, {upsert: true, new: true}, function(err) {
       if(err) return next(err);
     });
-
-
-
   } catch (e) {
     return next(e);
   }
   res.end('ok');
 }
-
-// Tank.update({_id: "579d169d0467df0a3432e7ef"}, { $set: { size: 'large' }}, callback);
 
 exports.saveData = saveData;
 

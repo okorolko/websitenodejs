@@ -6,6 +6,7 @@ exports.post = function(req, res, next) {
     'html': req.body.html,
     'css': req.body.css,
     'js': req.body.javascript,
+    'sass': req.body.sass,
     'git': req.body.git,
     'gulp': req.body.gulp,
     'bower': req.body.bower,

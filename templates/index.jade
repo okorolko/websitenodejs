@@ -2,8 +2,8 @@ doctype html
 html(lang='ru-RU')
   include common/_head
   body
-    <!--[if lt IE 7]>
-    <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
+    <!--[if lt IE 9]>
+    <p class="browsehappy">You use <strong>an old</strong> browser. Please <a href="http://browsehappy.com/">update it</a></p>
     <![endif]-->
     .preloader_container
       .preloader
@@ -12,6 +12,14 @@ html(lang='ru-RU')
         .inner-circle
         .preloader_text 0
     .wrapper-welcome
+      .index-modal-container#index-modal-container-robots
+        .index-modal-block
+          .index-modal-block-text Robots are not welcome here
+          button.index-modal-block-button#index-modal-robots-ok Ok
+      .index-modal-container#index-modal-container-field
+        .index-modal-block
+          .index-modal-block-text Empty fields remaining
+          button.index-modal-block-button#index-modal-field-ok Ok
       .parallax
         .parallax__layer
           img(src='assets/img/parallax/layer_009.jpg').parallax__layer-img
@@ -33,66 +41,60 @@ html(lang='ru-RU')
           img(src='assets/img/parallax/layer_001.png').parallax__layer-img
       header.header
         .authorize
-          a(class='authorize_div', href='#')
-            span.authorize_div-text Авторизоваться
+          a(class='authorize_div', href='')
+            span.authorize_div-text Authorize
       section
         .flip
           .flip_front
             .flip-avatar
               img(src='/assets/img/ava.jpg').flip-ava-img
-            h2.flip-name Олег Королько
-            p.flip-text Личный сайт веб разработчика
+            h2.flip-name Oleg Korolko
+            p.flip-text Personal Website of Web Developer
             nav
               ul.menu
                 li.menu-elem.menu-elem-1
-                  a(class='menu-elem-link', href='works')
-                    span.menu-elem-text Мои работы
+                  a(class='menu-elem-link', href='works.html')
+                    span.menu-elem-text Works
                 li.menu-elem.menu-elem-2
-                  a(class='menu-elem-link', href='aboutme')
-                    span.menu-elem-text Обо мне
+                  a(class='menu-elem-link', href='aboutme.html')
+                    span.menu-elem-text About
                 li.menu-elem.menu-elem-3
-                  a(class='menu-elem-link', href='blog')
-                    span.menu-elem-text Блог
-            .icons
-              -var vk = "./assets/img/icons/vk.svg"
-              -var lin = "/assets/img/icons/in.svg"
-              -var github = "/assets/img/icons/github.svg"
-
-              mixin use(name, svg)
-                svg(class="#{name}" role="img")
-                  use(xlink:href="#{svg}##{name}")
-              +use('vk', vk)
-              +use('in', lin)
-              +use('github', github)
+                  a(class='menu-elem-link', href='blog.html')
+                    span.menu-elem-text Blog
+            .index-icons
+              a(class='', href='http://vk.com/id82593')
+                #index-vk
+              a(class='', href='http://linkedin.com')
+                #index-in
+              a(class='', href='https://github.com/olegk101')
+                #index-github
           .flip_back
-            h2.flip_back__header Авторизуйтесь
+            h2.flip_back__header Authorize
             form.auth_form
               .auth_div
                 span.auth_span
                   i(class='fa fa-user').auth_span_icon
-                input(type="text" id="name" name="name" placeholder='Логин').auth_input
+                input(type='text' name='name' placeholder='Login').auth_input#index_login
               .auth_div
                 span.auth_span
                   i(class='fa fa-key').auth_span_icon
-                input(type="password" id="password" name="password" placeholder='Пароль').auth_input
+                input(type='text' name='password' placeholder='Password').auth_input#index_pass
               .isHuman.checkbox
                 label.fancy-checkbox
                   input(type='checkbox')#isHuman
-                  span.checkbox_span Я человек
+                  span.checkbox_span I am human
               .auth_radio_container
-                span.notRobot Вы точно не робот?
+                span.notRobot Are you sure?
                 .auth_radio_buttons
                   input(type='radio', name='option', id='radio1').auth_radio_buttons_left
-                  label(for='radio1').auth_radio_buttons_left Да
+                  label(for='radio1').auth_radio_buttons_left Yes
                   input(type='radio', name='option', id='radio2').auth_radio_buttons_right
-                  label(for='radio2').auth_radio_buttons_right Не уверен
-            nav
-              ul.menu
-                li.menu-elem.menu-elem-auth-1
-                  a(class='menu-elem-link', href='/')
-                    span.menu-elem-text На главную
-                li.menu-elem.menu-elem-auth-2#login
-                  a(class='menu-elem-link', href='authorize')
-                    span.menu-elem-text Войти
+                  label(for='radio2' 'checked').auth_radio_buttons_right No
+              nav
+                ul.menu
+                  li.menu-elem.menu-elem-auth-1
+                    button.menu-elem-link.menu-elem#backToMain Back to Main
+                  li.menu-elem.menu-elem-auth-2
+                    button.menu-elem-link.menu-elem#authorize Login
       footer.footer-welcome
-        p.footer-welcome-text © Олег Королько | создано с любовью в LoftSchool | 2016
+        p.footer-welcome-text Oleg Korolko | 2016

@@ -7,7 +7,7 @@ var schema = new Schema({
       type: String,
       required: true
     },
-    body: {
+    tech: {
       type: String,
       required: true
     },

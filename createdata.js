@@ -7,7 +7,7 @@ var mongoose = require('./libs/mongoose'),
 function saveData (data, res, next) {
   var work = new mongoose.models.Work({
     title: data.title,
-    body: data.body,
+    tech: data.tech,
     filename: data.filename,
     src: data.src
   });

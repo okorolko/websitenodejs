@@ -4,39 +4,43 @@ var mongoose = require('mongoose'),
 // описание схемы вводимых данных 
 var schema = new Schema({
   html: {
-    type: String,
+    type: Number,
     required: false
   },
   css: {
-    type: String,
+    type: Number,
     required: false
   },
   js: {
-    type: String,
+    type: Number,
+    required: false
+  },
+  sass: {
+    type: Number,
     required: false
   },
   git: {
-    type: String,
+    type: Number,
     required: false
   },
   gulp: {
-    type: String,
+    type: Number,
     required: false
   },
   bower: {
-    type: String,
+    type: Number,
     required: false
   },
   php: {
-    type: String,
+    type: Number,
     required: false
   },
   nodejs: {
-    type: String,
+    type: Number,
     required: false
   },
   mongodb: {
-    type: String,
+    type: Number,
     required: false
   },
   created: {

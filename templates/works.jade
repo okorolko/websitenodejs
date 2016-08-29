@@ -1,69 +1,63 @@
 extends main
+block title
+  svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 1000 85', preserveaspectratio='none').triangle
+    polygon(points='0,0   0,86   500.8,86   500.8,75.5')#works_triangle_left
+    polygon(points='1000,0   1000,86   500,86   500,75.5')#works_triangle_right
 block content
   section.works
     .works__header_block
-      h2.works__header.works__header-additional МОИ РАБОТЫ
+      h2.works__header.works__header-additional WORKS
     .works__container
-      .works__container_top
-        .works__right_top
-          each item, index in works
-            img(src= item.src).works__right_top_img
-        .works__left
+      .slider__main
+        each item, index in works
+          .slider__main-img_container
+            img(src= item.src).slider__main_img
+      .works__container_left
+        .works__container_left_inner
           .works__left_header
-          each item, index in works
-            h3.works__left_header_inner= item.title
+            each item, index in works
+              h3.works__left_header_inner= item.title
           .works__left_done-with
             each item, index in works
-              .works__left_done-with_inner= item.body
-            button.works__left_checkout-site Посмотреть сайт
-      .works__right_bottom
-        .works__right_bottom_left
-          .slider-arrow-down
+              .works__left_done-with_inner= item.tech
+          button.works__left_checkout-site See Website
+      .slider__control
+        .slider__prev
+          .slider-arrow.slider-arrow-down
           each item, index in works
-            img(src= item.src).works__right_bottom_left_img
-        .works__right_bottom_right
-          .slider-arrow-up
+            .slider__img_container.nextSlideImg
+              img(src= item.src).slider__img
+        .slider__next
+          .slider-arrow.slider-arrow-up
           each item, index in works
-            img(src= item.src).works__right_bottom_right_img
+            .slider__img_container.prevSlideImg
+              img(src= item.src).slider__img
   section.testimonials
     .testimonials__header-block
-      h2.works__header ЧТО ОБО МНЕ ГОВОРЯТ
-      .testimonials_item_container
-        .testimonials_item
-          p(class='testimonials_item_text').
-            Этот парень проходил обучение веб-разработке не где-то,
-            а в LoftSchool! 2 месяца только самых тяжелых испытаний
-            и бессонных ночей!
-          .testimonials_bottom
+      h2.works__header.works__header-additional ABOUT
+    .testimonials_item_container
+      .testimonials_item
+        p(class='testimonials_item_text').
+          This guy passed Advanced Web Development course in LoftSchool!
+        .testimonials__bottom
           img(src='assets/img/dima.png').testimonials_img
           div.testimonials_name
-            div.testimonials_name_item Ковальчук Дмитрий
-            div.testimonials_name_item основатель LoftSchool
-        .testimonials_item
-          p(class='testimonials_item_text').
-            Этот код выдержет любые испытания.
-            Только пожалуйста, не загружается сайт на слишком
-            старых браузерах!
-          .testimonials_bottom
-            img(src='assets/img/zar.png').testimonials_img
-            div.testimonials_name
-              div.testimonials_name_item Зар Захаров
-              div.testimonials_name_item главный преподаватель курса
-      .testimonials__blur
-        .form-contact__wrapper
-          .form-contact__bg
-            form.form-contact
-              .section-title
-                .section-title__inner Связаться со мной
-              input.form__input(type='text', placeholder='Имя')
-              input.form__input(type='email', placeholder='Email')
-              textarea.form__input(name='', cols='15', rows='2', placeholder='Ваше сообщение')
-          nav
-            ul.menu
-              li.menu-elem.menu-elem-auth-1
-                a(class='menu-elem-link', href='index.html')
-                  button.menu-elem-text Отправить
-
-              li.menu-elem.menu-elem-auth-2
-                a(class='menu-elem-link', href='authorize.html')
-                  span.menu-elem-text Очистить
+            div.testimonials_name_item Dmitry Kovalchuk
+            div.testimonials_name_item LoftSchool founder
+      .testimonials_item
+        p(class='testimonials_item_text').
+          This code can pass any tests.
+          Please, don't use outdated browsers to see this web site
+        .testimonials__bottom
+          img(src='assets/img/zar.png').testimonials_img
+          div.testimonials_name
+            div.testimonials_name_item Zar Zakharov
+            div.testimonials_name_item trainer
+      .testimonials__form-container
+        form.testimonials__form
+          h2.testimonials__form_header CONTACT
+          input(type='text' placeholder='name')
+          input(type='email' placeholder='email')
+          textarea(placeholder='your message')
+          button(type='submit').testimonials__form_submit Submit
+          button(type='reset').testimonials__form_reset Reset
