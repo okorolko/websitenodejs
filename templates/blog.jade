@@ -9,7 +9,7 @@ block content
       ul.blog-menu-list
         each item, index in posts
           li.blog-menu-elem(data-id= index, id='item#{index}')
-            .blog-menu-elem-container #{item.title}
+            .blog-menu-elem-inner #{item.title}
     .blog-content
         each item, index in posts
             .blog-article
